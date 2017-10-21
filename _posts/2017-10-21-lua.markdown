@@ -3,8 +3,11 @@ layout: post
 title: lua学习笔记之Lua的function、closure和upvalue
 date: 2017-10-21 12:29:24.000000000 +08:00
 ---
-     
-        Lua中的函数是一阶类型值(first-class value)，定义函数就象创建普通类型值一样(只不过函数类型值的数据主要是一条条指令而已)，所以在函数体中仍然可以定义函数。假设函数f2定义在函数f1中，那么就称f2为f1的内嵌(inner)函数，f1为f2的外包(enclosing)函数，外包和内嵌都具有传递性，即f2的内嵌必然是f1的内嵌，而f1的外包也一定是f2的外包。内嵌函数可以访问外包函数已经创建的所有局部变量，这种特性便是所谓的词法定界(lexical scoping)，而这些局部变量则称为该内嵌函数的外部局部变量(external local variable)或者upvalue(这个词多少会让人产生误解，因为upvalue实际指的是变量而不是值)。试看如下代码：
+Lua中的函数是一阶类型值(first-class value)，定义函数就象创建普通类型值一样(只不过函数类型值的数据主要是一条条指令而已)，所以在函数体中仍然可以定义函数。假设函数f2定义在函数f1中，那么就称f2为f1的内
+嵌(inner)函数，f1为f2的外包(enclosing)函数，外包和内嵌都具有传递性，即f2的内嵌必然是f1的内嵌，而f1的外包也一定是f2的外包。内嵌函数可以访问外包函数已经创建的所有局部变量，这种特性便是所谓的词法定界
+(lexical scoping)，而这些局部变量则称为该内嵌函数的外部局部变量(external local variable)或者upvalue(这个词多少会让人产生误解，因为upvalue实际指的是变量而不是值)。
+
+试看如下代码：
 {% highlight ruby %}
 　　function f1(n) 　　-- 函数参数也是局部变量 　　
         local function f2() 　　
