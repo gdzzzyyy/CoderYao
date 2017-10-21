@@ -1,11 +1,11 @@
 # Basic
 title: CoderYao
-subtitle: 做游戏的小男生
+subtitle: 做游戏的男生
 welcome_message: <a href="https://github.com/onevcat/vno-jekyll" target="_blank">Download the theme</a>
 description: Vno Jekyll is a port of my Ghost theme vno.
-creator: <a href="http://www.coderyao.com">@coderyao</a>
+creator: <a href="http://www.coderyao.cn">@coderyao</a>
 
-url: "http://www.coderyao.com"
+url: "http://www.coderyao.cn"
 
 permalink: /:year/:month/:title/
 
@@ -22,7 +22,7 @@ blog_button:
 
 # Navigation buttons in the front page.
 nav:
-    - {title: Projects, description: My Projects, url: 'http://www.coderyao.com'}
+    - {title: Projects, description: My Projects, url: 'http://www.coderyao.cn'}
     # - {title: Another Button, description: A button, url: 'http://example.com'}
 
 # Pagination
